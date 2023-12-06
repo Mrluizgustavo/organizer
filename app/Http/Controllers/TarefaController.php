@@ -34,8 +34,19 @@ class TarefaController extends Controller
             'nm_tarefa' => 'string|required',
             'conteudo_tarefa' => 'string|required',
             'cor' => 'string|required',
-            'n_Checklists' => 'numeric|required'
+            'n_Checklists' => 'numeric|required',
+            'checklists' => 'array|required',
+            'checklists.*.item' => 'required|string'
         ]);
+
+        $checklists = [];
+        foreach ($dados_trf['checklists'] as $i => $checklist) {
+            $checklists[$i] = [
+                'item' => $checklist['item'],
+            ];
+        }
+    
+        $dados_tarefa['checklists'] = $checklists;
 
         Tarefa::create($Dados_trf);
 

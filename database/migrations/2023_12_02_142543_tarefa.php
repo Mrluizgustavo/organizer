@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('conteudo_tarefa');
             $table->string('cor');
             $table->unsignedInteger('n_Checklists');
+            $table->json('checklists')->nullable();
             $table->timestamps();
         });
     }

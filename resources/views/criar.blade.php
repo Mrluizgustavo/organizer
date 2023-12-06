@@ -109,26 +109,32 @@
                         </div>
                       </div>
 
-                      <!-- State-->
+                      <!-- Checklists-->
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="N_marcadores" class="form-label">Checklists</label>                                    
-                          <input class="form-select" type="number" name="n_Checklists" id="N_marcadores" onchange="mostrar_checks()">
+                            <label for="N_marcadores" class="form-label">Checklists</label>
+                            <input class="form-select" type="number" name="n_Checklists" id="N_marcadores" onchange="mostrar_checks()">
                         </div>
                       </div>
 
+
                       <script>
-                        function mostrar_checks() {
-                            var quant = document.getElementById("N_marcadores").value;
-                            var div = document.querySelector(".marcadores");
+                       function mostrar_checks() {
+                          var quant = document.getElementById("N_marcadores").value;
+                          var div = document.querySelector(".marcadores");
 
-                            // Limpar o conteúdo atual da div
-                            div.innerHTML = "";
+                          // Limpar o conteúdo atual da div
+                          div.innerHTML = "";
 
-                            for (var i = 1; i <= quant; i++) {
-                                // Concatenar o HTML ao invés de substituir
-                                div.innerHTML += "<div class='col-md-6'>  <div class='form-group'> <label for='zip' class='form-label'>"+i+"° Checklist</label> <input type='text' class='form-control' id='zip' placeholder='' required=''></div></div>";
-                            }
+                          for (var i = 1; i <= quant; i++) {
+                              div.innerHTML += `
+                                  <div class='col-md-6'>
+                                      <div class='form-group'>
+                                          <label for='checklists_${i}' class='form-label'>${i}° Checklist</label>
+                                          <input type='text' name='checklists[${i}][item]' class='form-control' id='checklists_${i}' placeholder='' required=''>
+                                      </div>
+                                  </div>`;
+                          }
                         }
                       </script>
 

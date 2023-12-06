@@ -13,7 +13,12 @@ class Tarefa extends Model
         'nm_tarefa',
         'conteudo_tarefa',
         'cor',
-        'n_Checklists'
+        'n_Checklists',
+        'checklists'
+    ];
+
+    protected $casts = [
+        'checklists' => 'array'
     ];
 
 }
