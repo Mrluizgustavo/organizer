@@ -100,49 +100,15 @@
                         <div class="form-group">
                           <label for="cor" class="form-label">Cor</label>
                           <select name="cor" class="form-select" id="cor" required="">
-                            <option value="Preto" selected>Padrão: Preto</option>
-                            <option value="Roxo">Roxo</option>
-                            <option value="Azul">Azul</option>
-                            <option value="Vermelho">Vermelho</option>
-                            <option value="Preto">Preto</option>
+                            <option value="#1C1C1C" selected>Padrão: Preto</option>
+                            <option value="#4B0082">Roxo</option>
+                            <option value="#000080">Azul</option>
+                            <option value="#8B0000">Vermelho</option>
                           </select>
                         </div>
                       </div>
 
-                      <!-- Checklists-->
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="N_marcadores" class="form-label">Checklists</label>
-                            <input class="form-select" type="number" name="n_Checklists" id="N_marcadores" onchange="mostrar_checks()">
-                        </div>
-                      </div>
-
-
-                      <script>
-                       function mostrar_checks() {
-                          var quant = document.getElementById("N_marcadores").value;
-                          var div = document.querySelector(".marcadores");
-
-                          // Limpar o conteúdo atual da div
-                          div.innerHTML = "";
-
-                          for (var i = 1; i <= quant; i++) {
-                              div.innerHTML += `
-                                  <div class='col-md-6'>
-                                      <div class='form-group'>
-                                          <label for='checklists_${i}' class='form-label'>${i}° Checklist</label>
-                                          <input type='text' name='checklists[${i}][item]' class='form-control' id='checklists_${i}' placeholder='' required=''>
-                                      </div>
-                                  </div>`;
-                          }
-                        }
-                      </script>
-
-                      <!--Marcadores-->
-                      <div class="marcadores">
-                          
-                      </div>
-
+                  
                       <div class="pt-5 mt-5 pb-5 border-top d-flex justify-content-md-end align-items-center">
                         <button type="submit" class="btn btn-dark w-100 w-md-auto">Concluído</button>
                       </div>   

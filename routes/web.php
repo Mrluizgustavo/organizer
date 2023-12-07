@@ -26,3 +26,12 @@ Route::get('/',[TarefaController::class,'index'])->name('Index');
 // Rotas dedicadas para a página Criar
 Route::get('/Criar',[TarefaController::class,'Mostrar_Criar'])->name('Criar');
 Route::post('/CreateRowTarefa',[TarefaController::class,'Cadastrar_Tarefa'])->name('Cadastro-tarefa');
+
+
+
+//Rotas para a pagina visualizar.blade.php
+Route::get('/Visualizar',[TarefaController::class,'Mostrar_Visualizar'])->name('Visualizar');
+
+//Rotas para a pagina atualizar.blade.php
+Route::get('/Atualizar',[TarefaController::class,'Mostrar_Atualizar'])->name('Atualizar');
+

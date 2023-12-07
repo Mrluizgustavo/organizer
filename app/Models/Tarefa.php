@@ -12,13 +12,8 @@ class Tarefa extends Model
     protected $fillable = [
         'nm_tarefa',
         'conteudo_tarefa',
-        'cor',
-        'n_Checklists',
-        'checklists'
+        'cor'
     ];
 
-    protected $casts = [
-        'checklists' => 'array'
-    ];
 
 }

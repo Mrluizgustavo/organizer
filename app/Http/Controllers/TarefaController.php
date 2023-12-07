@@ -24,6 +24,18 @@ class TarefaController extends Controller
         return View('Criar');
     }
 
+    public function Mostrar_Visualizar(){
+        $Dados_trf = Tarefa::All();
+
+        return View('Visualizar',['dadosTarefa'=> $Dados_trf]);
+    }
+    
+    public function Mostrar_Atualizar(){
+        $Dados_trf = Tarefa::All();
+
+        return View('Atualizar',['dadosTarefa'=> $Dados_trf]);
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -33,20 +45,9 @@ class TarefaController extends Controller
         $Dados_trf = $request->validate([
             'nm_tarefa' => 'string|required',
             'conteudo_tarefa' => 'string|required',
-            'cor' => 'string|required',
-            'n_Checklists' => 'numeric|required',
-            'checklists' => 'array|required',
-            'checklists.*.item' => 'required|string'
+            'cor' => 'string|required'
+            
         ]);
-
-        $checklists = [];
-        foreach ($dados_trf['checklists'] as $i => $checklist) {
-            $checklists[$i] = [
-                'item' => $checklist['item'],
-            ];
-        }
-    
-        $dados_tarefa['checklists'] = $checklists;
 
         Tarefa::create($Dados_trf);
 

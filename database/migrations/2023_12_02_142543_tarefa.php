@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('tarefas', function (Blueprint $table){
             $table->id();
             $table->string('nm_tarefa');
-            $table->string('conteudo_tarefa');
+            $table->text('conteudo_tarefa');
             $table->string('cor');
-            $table->unsignedInteger('n_Checklists');
-            $table->json('checklists')->nullable();
             $table->timestamps();
         });
     }

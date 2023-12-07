@@ -123,13 +123,13 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="{{route('Atualizar')}}" role="button" aria-expanded="false">
                                   Atualizar
                                 </a>
                               </li>
 
                               <li class="nav-item">
-                                <a class="nav-link" href="./category.html" role="button">
+                                <a class="nav-link" href="{{route('Visualizar')}}" role="button">
                                   Ver
                                 </a>
                               </li>
@@ -139,19 +139,8 @@
                                   Excluir
                                 </a>
                               </li>
-
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Pages
-                                </a>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="./index.html">Homepage</a></li>
-                                  <li><a class="dropdown-item" href="../views/login.html">Login</a></li>
-                                  <li><a class="dropdown-item" href="./register.html">Register</a></li>
-                                 
-                                </ul>
-                              </li>
-                          </ul>                    <!-- / Menu-->
+                          </ul>                    
+                          <!-- / Menu-->
     
                     </div>
                     <!-- / Main Navigation-->
