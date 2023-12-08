@@ -74,10 +74,7 @@
                         </li>
                         <!-- /Mobile Nav Toggler-->
     
-                        <!-- Navbar Search-->
-                        <li class="d-none d-sm-block">
-                            <span class="nav-link text-body search-trigger cursor-pointer">Search</span>
-    
+                        
                             <!-- Search navbar overlay-->
                             <div class="navbar-search d-none">
                                 <div class="input-group mb-3 h-100">
@@ -96,13 +93,7 @@
                         </li>
                         <!-- /Navbar Search-->
     
-                        <!-- Navbar Login-->
-                        <li class="ms-1 d-none d-lg-inline-block">
-                            <a class="nav-link text-body" href="./login.html">
-                                Account
-                            </a>
-                        </li>
-                        <!-- /Navbar Login-->
+                        
     
                         
     
@@ -110,7 +101,7 @@
                     <!-- Navbar Icons-->                
     
                     <!-- Main Navigation-->
-                    <div class="flex-shrink-0 collapse navbar-collapse navbar-collapse-light w-auto flex-grow-1 order-2 order-lg-1"
+                    <div class="flex-shrink-0 collapse navbar-collapse navbar-collapse-light w-auto flex-grow-1 order-2 order-lg-1 "
                         id="navbarNavDropdown">
     
                         <!-- Menu-->
@@ -130,13 +121,7 @@
 
                               <li class="nav-item">
                                 <a class="nav-link" href="{{route('Visualizar')}}" role="button">
-                                  Ver
-                                </a>
-                              </li>
-
-                              <li class="nav-item">
-                                <a class="nav-link" href="./category.html" role="button">
-                                  Excluir
+                                  Visualizar
                                 </a>
                               </li>
                           </ul>                    
@@ -285,7 +270,6 @@
                                 <picture class="d-block mb-4 img-clip-shape-one">
                                     <img class="w-100" title="" src="./assets/images/categories/img-1.jpg" alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Keep Warm</p>
                                 <h4 class="lead fw-bold">Criar</h4>
                             </div>
                           </div>
@@ -294,7 +278,6 @@
                                 <picture class="d-block mb-4 img-clip-shape-one">
                                     <img class="w-100" title="" src="./assets/images/categories/img-4.jpg" alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
-                                <p class="title-small mb-2 text-muted">20% Off</p>
                                 <h4 class="lead fw-bold">Editar</h4>
                             </div>
                           </div>
@@ -303,7 +286,6 @@
                                 <picture class="d-block mb-4 img-clip-shape-one">
                                     <img class="w-100" title="" src="./assets/images/categories/img-3.jpg" alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Just Arrived</p>
                                 <h4 class="lead fw-bold">Visualizar</h4>
                             </div>
                           </div>
@@ -312,7 +294,6 @@
                                 <picture class="d-block mb-4 img-clip-shape-one">
                                     <img class="w-100" title="" src="./assets/images/categories/img-2.jpg" alt="HTML Bootstrap Template by Pixel Rocket">
                                 </picture>
-                                <p class="title-small mb-2 text-muted">Accessories</p>
                                 <h4 class="lead fw-bold">Excluir</h4>
                             </div>
                           </div>

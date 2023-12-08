@@ -35,3 +35,10 @@ Route::get('/Visualizar',[TarefaController::class,'Mostrar_Visualizar'])->name('
 //Rotas para a pagina atualizar.blade.php
 Route::get('/Atualizar',[TarefaController::class,'Mostrar_Atualizar'])->name('Atualizar');
 
+//Rotas para a pagina alterar.blade.php
+Route::get('/Alterar/{registroTarefa}',[TarefaController::class,'Mostrar_Alterar'])->name('Alterar');
+Route::put('/Alterando-tarefa/{registroTarefa}',[TarefaController::class,'AlterarTarefa'])->name('Alterar-tarefa');
+
+
+//Rotas para Apagar
+Route::delete('/Apagar/{registroTarefa}',[TarefaController::class,'Apagar'])->name('Apagar');

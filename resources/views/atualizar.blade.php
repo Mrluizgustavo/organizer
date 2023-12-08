@@ -17,6 +17,7 @@
     rel="stylesheet">
 
   <!-- Favicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css" integrity="sha384-eS9WEtGlA6ZN3S4Iv7NUvAg0GPuqPoNQIoG0C92YkT95BrVLlOZPb5NhunEWkp0Z" crossorigin="anonymous">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
@@ -81,12 +82,26 @@
                                 <div class="card m-2" id="card_{{$registrosTarefa->id}}">
                                     <div class="card-header d-flex justify-content-between" style="background-color:{{$registrosTarefa->cor}}; border-radius:15px">
                                         <h5 class="text-white">{{$registrosTarefa->nm_tarefa}}</h5>
-                                        <button class="btn btn-light btn-toggle-content btn-sm text-white border-0" style="background-color:{{$registrosTarefa->cor}}; " data-card-id="{{$registrosTarefa->id}}">+</button>
+                                        <button class="btn btn-toggle-content btn-sm text-white border-0" style="background-color:{{$registrosTarefa->cor}}; " data-card-id="{{$registrosTarefa->id}}">+</button>
                                     </div>
                                     <div class="card-body" style="display:none;" id="content_{{$registrosTarefa->id}}">
                                         <blockquote class="blockquote mb-0">
                                             <p>{{$registrosTarefa->conteudo_tarefa}}</p>
                                         </blockquote>
+                                        <div class="d-flex justify-content-start">
+                                            <a class="btn btn-sm" href="{{ route('Alterar' , $registrosTarefa->id) }}">
+                                                <img src="./assets/images/alterar.png" alt="Alterar" width="25px">
+                                            </a>
+
+                                            <form action="{{ route('Apagar', $registrosTarefa->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir?')">
+                                                @method('DELETE')
+                                                @csrf
+
+                                                <button type="submit" class="btn btn-sm">
+                                                    <img src="./assets/images/apagar.png" alt="Apagar" width="25px">
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

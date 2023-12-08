@@ -36,10 +36,11 @@ class TarefaController extends Controller
         return View('Atualizar',['dadosTarefa'=> $Dados_trf]);
     }
 
+    public function Mostrar_Alterar(Tarefa $registroTarefa){
+    
+        return View('Alterar',['registroTarefa'=> $registroTarefa]);
+    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function Cadastrar_Tarefa(Request $request)
     {
         $Dados_trf = $request->validate([
@@ -54,27 +55,25 @@ class TarefaController extends Controller
         return redirect::route('Criar');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Tarefa $tarefa)
-    {
-        //
+
+    public function Apagar(Tarefa $registroTarefa)
+    {    
+        $registroTarefa->delete();
+
+        return Redirect::route('Atualizar');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Tarefa $tarefa)
-    {
-        //
+    public function AlterarTarefa(Tarefa $registroTarefa, Request $request){
+
+        $Dados_trf = $request->validate([
+            'nm_tarefa' => 'string|required',
+            'conteudo_tarefa' => 'string|required',
+            'cor' => 'string|required'
+        ]);
+
+        $tarefa = Tarefa::find($registroTarefa->id);
+        $tarefa->update($Dados_trf);
+        return redirect()->route('Atualizar');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Tarefa $tarefa)
-    {
-        //
-    }
 }
